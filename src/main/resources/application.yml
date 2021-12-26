@@ -24,4 +24,5 @@ spring:
 logging.level:
     #하이버네이트가 생성하는 sql이 보인다 / 로거를 통해 보인다.
   org.hibernate.SQL: debug
-    # org.hibernate.type: trace
+  #파라미터 조회
+  org.hibernate.type: trace
