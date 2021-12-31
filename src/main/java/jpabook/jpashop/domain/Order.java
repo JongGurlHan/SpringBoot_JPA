@@ -24,7 +24,7 @@ public class Order {
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems = new ArrayList<>();
 
-    @OneToOne
+    @OneToOne //fk는 조회를 많이 하는 쪽에 둔다, 연관관계의 주인이 된다.
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;
 

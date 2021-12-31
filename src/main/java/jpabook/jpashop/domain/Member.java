@@ -12,7 +12,7 @@ import java.util.List;
 public class Member {
 
     @Id @GeneratedValue
-    @Column(name = "member_id")
+    @Column(name = "member_id")//pk에 연결
     private Long id;
 
     private String name;
