@@ -18,8 +18,8 @@ public class Category {
 
     private String name;
 
-    //카테고리는 list로 Item을 가지고, 아이템도 list로 카테고리를 가진다.
-    @ManyToMany
+    //카테고리는 list로 Item을 가지고,  아이템도 list로 카테고리를 가진다.
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "category_item",
             joinColumns = @JoinColumn(name = "category_id"),
             inverseJoinColumns = @JoinColumn(name="item_id"))
@@ -29,10 +29,15 @@ public class Category {
 
     //셀프로 양방향 연관관계를 걸었다.
     //마치 다른 엔티티에 매핑한것 처럼 연관관게 설정
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
     private Category parent;
 
     @OneToMany(mappedBy = "parent")
     private List<Category>child = new ArrayList<>();
+
+    public void addChildCategory(Category child)
+
+
+
 }

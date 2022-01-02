@@ -14,11 +14,11 @@ public class OrderItem {
     @Column(name = "order_item_id")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)//실무에서 모든 연관관계는 지연로딩( LAZY )으로 설정해야 한다.
     @JoinColumn(name = "item_id")
     private Item item;
 
-    @ManyToOne //하나의 order가 여러개의 OrderItem을 가지고 OrderItem은 하나의 order를 가지므로
+    @ManyToOne(fetch = FetchType.LAZY) //하나의 order가 여러개의 OrderItem을 가지고 OrderItem은 하나의 order를 가지므로
     @JoinColumn(name = "order_id")
     private Order order;
 
