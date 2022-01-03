@@ -25,4 +25,6 @@ public class Member {
                                     //값을 넣는다고 외래키가 변경되지 않는다.
     private List<Order> orders = new ArrayList<>();
 
+
+
 }
